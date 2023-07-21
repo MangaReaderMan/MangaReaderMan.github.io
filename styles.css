@@ -37,22 +37,34 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-#prev-page,
-#next-page {
-  display: inline-block;
+#prev-page, #next-page {
   padding: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
-  color: #eee;
 }
 
-#prev-page:hover,
-#next-page:hover {
-  background-color: #444;
+#prev-page:hover, #next-page:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Style the next page container */
 #next-page-container {
-  display: flex;
-  justify-content: flex-end;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
 }
+
+#next-page {
+  padding: 5px;
+}
+
+@media (max-width: 768px) {
+  #prev-page, #next-page {
+    font-size: 18px;
+    padding: 5px;
+  }
+}
+
