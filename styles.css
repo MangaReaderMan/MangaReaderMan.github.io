@@ -33,6 +33,12 @@ body {
   margin-bottom: 20px;
 }
 
+.manga-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Style the manga controls */
 #controls {
   position: absolute;
