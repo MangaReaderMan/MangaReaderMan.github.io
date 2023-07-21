@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manga Reader</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #manga-container {
+            max-width: 800px;
+        }
+
+        #manga-image {
+            width: 100%;
+            height: auto;
+        }
+
+        #controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+
+        #prev-page,
+        #next-page {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="manga-container">
+        <img id="manga-image" src="" alt="Manga Page">
+        <div id="controls">
+            <span id="prev-page">&lt; Previous Page</span>
+            <span id="next-page">Next Page &gt;</span>
+        </div>
+    </div>
+
+    <script>
+        // Array to hold the file names of manga pages (assuming they are in the "manga" folder)
+        const mangaPages = [
+            "manga/page1.jpg",
+            "manga/page2.jpg",
+            "manga/page3.jpg",
+            // Add more page file names as needed
+        ];
+
+        let currentPageIndex = 0;
+        const mangaImage = document.getElementById("manga-image");
+        const prevPageBtn = document.getElementById("prev-page");
+        const nextPageBtn = document.getElementById("next-page");
+
+        function loadPage(pageIndex) {
+            if (pageIndex >= 0 && pageIndex < mangaPages.length) {
+                mangaImage.src = mangaPages[pageIndex];
+                currentPageIndex = pageIndex;
+            }
+        }
+
+        prevPageBtn.addEventListener("click", () => {
+            loadPage(currentPageIndex - 1);
+        });
+
+        nextPageBtn.addEventListener("click", () => {
+            loadPage(currentPageIndex + 1);
+        });
+
+        // Load the first page initially
+        loadPage(0);
+    </script>
+</body>
+</html>
