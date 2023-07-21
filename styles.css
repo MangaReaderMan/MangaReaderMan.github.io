@@ -25,17 +25,15 @@ body {
 
 #manga-image {
   max-width: 100%;
-  max-height: calc(100vh - 160px); /* Reduce max height to prevent overlap with controls */
+  max-height: calc(100vh - 160px);
 }
 
 /* Style the manga controls */
 #controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.8);
+  margin-top: 20px; /* Add top margin to create space between manga image and controls */
 }
 
 #prev-page, #next-page {
