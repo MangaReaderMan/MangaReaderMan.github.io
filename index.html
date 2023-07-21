@@ -18,38 +18,49 @@
   </div>
 
   <script>
-    // Array to hold the file names of manga pages (assuming they are in the "manga" folder)
+    // Array to hold the file names of manga pages
     const mangaPages = [
-      "manga/001.jpg",
-      "manga/002.jpg",
-      "manga/003.jpg",
-      "manga/004.jpg",
-      "manga/005.jpg"
-      // Add more page file names as needed
+      // Chapter 1
+      "manga/c001/001.jpg",
+      "manga/c001/002.jpg",
+      // Add more page file names for chapter 1 as needed
+    
+      // Chapter 2
+      "manga/c002/001.jpg",
+      "manga/c002/002.jpg",
+      // Add more page file names for chapter 2 as needed
+    
+      // Chapter 3
+      "manga/c003/001.jpg",
+      "manga/c003/002.jpg",
+      // Add more page file names for chapter 3 as needed
+    
+      // Add more chapters and their respective page file names as needed
     ];
-
+  
     let currentPageIndex = 0;
     const mangaImage = document.getElementById("manga-image");
     const prevPageBtn = document.getElementById("prev-page");
     const nextPageBtn = document.getElementById("next-page");
-
+    
     function loadPage(pageIndex) {
       if (pageIndex >= 0 && pageIndex < mangaPages.length) {
         mangaImage.src = mangaPages[pageIndex];
         currentPageIndex = pageIndex;
       }
     }
-
+    
     prevPageBtn.addEventListener("click", function() {
       loadPage(currentPageIndex - 1);
     });
-
+    
     nextPageBtn.addEventListener("click", function() {
       loadPage(currentPageIndex + 1);
     });
-
+    
     // Load the first page when the page loads
     loadPage(currentPageIndex);
+
   </script>
 </body>
 </html>
