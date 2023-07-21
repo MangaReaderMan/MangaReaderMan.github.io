@@ -9,12 +9,6 @@
 <body>
   <div id="manga-container">
     <img id="manga-image" src="" alt="Manga Page">
-    <div id="controls">
-      <span id="prev-page">&lt; Previous Page</span>
-      <div id="next-page-container">
-        <span id="next-page">Next Page &gt;</span>
-      </div>
-    </div>
   </div>
 
   <script>
@@ -25,45 +19,31 @@
 
       // Chapter 0.2
       "manga/c000.2/1.jpg",  "manga/c000.2/2.jpg",  "manga/c000.2/3.jpg",  "manga/c000.2/4.jpg",  "manga/c000.2/5.jpg",  "manga/c000.2/6.jpg",  "manga/c000.2/7.jpg",  "manga/c000.2/8.jpg",  "manga/c000.2/9.jpg",  "manga/c000.2/10.jpg",  "manga/c000.2/11.jpg",  "manga/c000.2/12.jpg",  "manga/c000.2/13.jpg",  "manga/c000.2/14.jpg",  "manga/c000.2/15.jpg",  "manga/c000.2/16.jpg",  "manga/c000.2/17.jpg",  "manga/c000.2/18.jpg",  "manga/c000.2/19.jpg",  "manga/c000.2/20.jpg",  "manga/c000.2/21.jpg",  "manga/c000.2/22.jpg",  "manga/c000.2/23.jpg",  "manga/c000.2/24.jpg",  "manga/c000.2/25.jpg",  "manga/c000.2/26.jpg",  "manga/c000.2/27.jpg",  "manga/c000.2/28.jpg",  "manga/c000.2/29.jpg",  "manga/c000.2/30.jpg",  "manga/c000.2/31.jpg",  "manga/c000.2/32.jpg",  "manga/c000.2/33.jpg",  "manga/c000.2/34.jpg",  "manga/c000.2/35.jpg",  "manga/c000.2/36.jpg",  "manga/c000.2/37.jpg",  "manga/c000.2/38.jpg",  "manga/c000.2/39.jpg",  "manga/c000.2/40.jpg",  "manga/c000.2/41.jpg",  "manga/c000.2/42.jpg",  "manga/c000.2/43.jpg",  "manga/c000.2/44.jpg",  "manga/c000.2/45.jpg",  "manga/c000.2/46.jpg",  "manga/c000.2/47.jpg",  "manga/c000.2/48.jpg",  "manga/c000.2/49.jpg",  "manga/c000.2/50.jpg",  "manga/c000.2/51.jpg",  "manga/c000.2/52.jpg",  "manga/c000.2/53.jpg",  "manga/c000.2/54.jpg",  "manga/c000.2/55.jpg",  "manga/c000.2/56.jpg",  "manga/c000.2/57.jpg",  "manga/c000.2/58.jpg",  "manga/c000.2/59.jpg",  "manga/c000.2/60.jpg",  "manga/c000.2/61.jpg",  "manga/c000.2/62.jpg",  "manga/c000.2/63.jpg",  "manga/c000.2/64.jpg",  "manga/c000.2/65.jpg",  "manga/c000.2/66.jpg",  "manga/c000.2/67.jpg",  "manga/c000.2/68.jpg",  "manga/c000.2/69.jpg",   
+
       
-      // Chapter 2
-      "manga/c002/001.jpg",
-      "manga/c002/002.jpg",
-      // Add more page file names for chapter 2 as needed
-    
-      // Chapter 3
-      "manga/c003/001.jpg",
-      "manga/c003/002.jpg",
-      // Add more page file names for chapter 3 as needed
-    
-      // Add more chapters and their respective page file names as needed
     ];
-  
-    let currentPageIndex = 0;
-    const mangaImage = document.getElementById("manga-image");
-    const prevPageBtn = document.getElementById("prev-page");
-    const nextPageBtn = document.getElementById("next-page");
     
+    const mangaImage = document.getElementById("manga-image");
+    const mangaContainer = document.getElementById("manga-container");
+    let currentPageIndex = 0;
     let touchStartX = 0;
     let touchEndX = 0;
-    
+
     function loadPage(pageIndex) {
-      if (pageIndex >= 0 && pageIndex < mangaPages.length) {
-        mangaImage.src = mangaPages[pageIndex];
-        currentPageIndex = pageIndex;
-      }
+      mangaImage.src = `manga/${pageIndex}.jpg`;
+      currentPageIndex = pageIndex;
     }
-    
+
     function handleTouchStart(event) {
       touchStartX = event.touches[0].clientX;
     }
-    
+
     function handleTouchEnd(event) {
       touchEndX = event.changedTouches[0].clientX;
       if (touchEndX < touchStartX) {
         // Swipe left
         loadPage(currentPageIndex + 1);
-    } else if (touchEndX > touchStartX) {
+      } else if (touchEndX > touchStartX) {
         // Swipe right
         loadPage(currentPageIndex - 1);
       }
@@ -71,18 +51,8 @@
 
     mangaContainer.addEventListener("touchstart", handleTouchStart);
     mangaContainer.addEventListener("touchend", handleTouchEnd);
-    
-    prevPageBtn.addEventListener("click", function() {
-      loadPage(currentPageIndex - 1);
-    });
-    
-    nextPageBtn.addEventListener("click", function() {
-      loadPage(currentPageIndex + 1);
-    });
-    
-    // Load the first page when the page loads
-    loadPage(currentPageIndex);
 
+    loadPage(currentPageIndex);
   </script>
 </body>
 </html>
