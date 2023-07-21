@@ -44,6 +44,9 @@
     const prevPageBtn = document.getElementById("prev-page");
     const nextPageBtn = document.getElementById("next-page");
     
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
     function loadPage(pageIndex) {
       if (pageIndex >= 0 && pageIndex < mangaPages.length) {
         mangaImage.src = mangaPages[pageIndex];
