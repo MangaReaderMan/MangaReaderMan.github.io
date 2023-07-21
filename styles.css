@@ -21,7 +21,7 @@ body {
 
 /* Style the manga image */
 #manga-image {
-  max-width: 105%;
+  max-width: 1000px;
   max-height: calc(100vh - 80px);
 }
 
