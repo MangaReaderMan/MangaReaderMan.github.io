@@ -9,6 +9,8 @@
 body {
   font-family: Arial, sans-serif;
   font-size: 16px;
+  background-color: #222;
+  color: #eee;
 }
 
 /* Center the manga container vertically and horizontally */
@@ -32,7 +34,7 @@ body {
   left: 0;
   width: 100%;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 #prev-page,
@@ -41,11 +43,12 @@ body {
   padding: 10px;
   font-weight: bold;
   cursor: pointer;
+  color: #eee;
 }
 
 #prev-page:hover,
 #next-page:hover {
-  background-color: #f0f0f0;
+  background-color: #444;
 }
 
 /* Style the next page container */
