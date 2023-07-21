@@ -39,16 +39,15 @@
       // Add more chapters and their respective page file names as needed
     ];
   
-    let currentPageIndex = localStorage.getItem("currentPageIndex") || 0;
+    let currentPageIndex = 0;
     const mangaImage = document.getElementById("manga-image");
     const prevPageBtn = document.getElementById("prev-page");
     const nextPageBtn = document.getElementById("next-page");
     
-    function loadPage(pageIndex) {
+     function loadPage(pageIndex) {
       if (pageIndex >= 0 && pageIndex < mangaPages.length) {
         mangaImage.src = mangaPages[pageIndex];
         currentPageIndex = pageIndex;
-        localStorage.setItem("currentPageIndex", currentPageIndex);
       }
     }
     
