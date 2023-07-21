@@ -8,6 +8,7 @@
 </head>
 <body>
   <div id="manga-container">
+    <h1 id="page-number"></h1>
     <img id="manga-image" src="" alt="Manga Page">
     <div id="controls">
       <span id="prev-page">&lt; Previous Page</span>
@@ -48,6 +49,8 @@
       if (pageIndex >= 0 && pageIndex < mangaPages.length) {
         mangaImage.src = mangaPages[pageIndex];
         currentPageIndex = pageIndex;
+
+        document.getElementById("page-number").textContent = `Page ${currentPageIndex + 1}`;
       }
     }
     
