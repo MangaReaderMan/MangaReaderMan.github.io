@@ -28,6 +28,11 @@ body {
   max-height: calc(100vh - 160px);
 }
 
+#page-number {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 /* Style the manga controls */
 #controls {
   position: absolute;
