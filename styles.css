@@ -19,12 +19,12 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  padding-bottom: 80px; /* Add bottom padding to make room for controls */
 }
 
-/* Style the manga image */
 #manga-image {
   max-width: 100%;
-  max-height: calc(100vh - 80px);
+  max-height: calc(100vh - 160px); /* Reduce max height to prevent overlap with controls */
 }
 
 /* Style the manga controls */
