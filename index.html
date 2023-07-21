@@ -5,43 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manga Reader</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f0f0f0;
-    }
-
-    #manga-container {
-      max-width: 800px;
-    }
-
-    #manga-image {
-      width: 80%;
-      max-height: 80vh; /* adjust this value as needed */
-    }
-
-    #controls {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px;
-    }
-
-    #prev-page,
-    #next-page {
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
   <div id="manga-container">
-    <img id="manga-image" src="" alt="Manga Page" />
+    <img id="manga-image" src="" alt="Manga Page">
     <div id="controls">
       <span id="prev-page">&lt; Previous Page</span>
-      <span id="next-page">Next Page &gt;</span>
+      <div id="next-page-container">
+        <span id="next-page">Next Page &gt;</span>
+      </div>
     </div>
   </div>
 
@@ -76,8 +48,8 @@
       loadPage(currentPageIndex + 1);
     });
 
-    // Load the first page initially
-    loadPage(0);
+    // Load the first page when the page loads
+    loadPage(currentPageIndex);
   </script>
 </body>
 </html>
