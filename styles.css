@@ -1,0 +1,49 @@
+/* Reset default browser styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set a default font family and size */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Center the manga container vertically and horizontally */
+#manga-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style the manga image */
+#manga-image {
+  max-width: 100%;
+  max-height: calc(100vh - 80px);
+}
+
+/* Style the manga controls */
+#controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#prev-page,
+#next-page {
+  display: inline-block;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#prev-page:hover,
+#next-page:hover {
+  background-color: #f0f0f0;
+}
