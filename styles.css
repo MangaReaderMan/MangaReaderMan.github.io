@@ -11,6 +11,7 @@ body {
   font-size: 16px;
   background-color: #222;
   color: #eee;
+  overflow: hidden;
 }
 
 /* Center the manga container vertically and horizontally */
@@ -44,6 +45,7 @@ body {
   font-size: 24px;
   font-weight: bold;
   cursor: pointer;
+  user-select: none;
 }
 
 #prev-page:hover, #next-page:hover {
