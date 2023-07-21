@@ -62,6 +62,29 @@
     // Load the first page when the page loads
     loadPage(currentPageIndex);
 
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const mangaContainer = document.getElementById("manga-container");
+    
+    mangaContainer.addEventListener("touchstart", function(event) {
+      touchStartX = event.changedTouches[0].screenX;
+    });
+    
+    mangaContainer.addEventListener("touchend", function(event) {
+      touchEndX = event.changedTouches[0].screenX;
+      handleSwipe();
+    });
+    
+    function handleSwipe() {
+      if (touchEndX < touchStartX) {
+        loadPage(currentPageIndex + 1);
+      }
+      if (touchEndX > touchStartX) {
+        loadPage(currentPageIndex - 1);
+      }
+    }
+
   </script>
 </body>
 </html>
